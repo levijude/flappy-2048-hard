@@ -1,0 +1,59 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
+</style>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Flappy 2048 Hard</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Remastered version of Flappy 2048 by LeviaJulianna09." />
+  <meta property="og:description" content="Remastered version of Flappy 2048 by LeviaJulianna09." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Flappy 2048 Hard" />
+  <meta property="og:site_name" content="Flappy 2048 Hard" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=0.5, width=610, height=1024" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <style type="text/css">
+    .cellol {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select:none;
+      user-select:none;
+    }
+  </style>
+
+  <div id="lgd" style="width: 300px; height: 64px; position: absolute;"></div>
+  <script type="text/javascript">
+    var lgdiv = document.getElementById('lgd');
+    lgdiv.style.left = Math.floor((window.innerWidth - 300)/2)+'px';
+    lgdiv.style.top = Math.floor((window.innerHeight - 64)/2)+'px';
+    lgdiv.style.fontFamily = '"Press Start 2P", system-ui';
+    lgdiv.style.fontSize = '16px';
+    lgdiv.style.fontWeight = 'bold';
+    lgdiv.style.textAlign = 'center';
+    lgdiv.innerHTML = 'Loading...';
+  </script>
+
+  <script type="text/javascript" src="flappy2048.js"></script> 
+  
+    <div id="e" class="e" >N</div>
+<script type="text/javascript">
+    document.getElementById("e").onclick = function () {
+        location.href = "https://flappy-2048.glitch.me/";
+    };
+  </script>
+   <div id="f" class="f" >Ş</div>
+<script type="text/javascript">
+    document.getElementById("f").onclick = function () {
+        location.href = "https://flappy-2048-sinister.glitch.me/";
+    };
+</script>
+</body>
+</html>

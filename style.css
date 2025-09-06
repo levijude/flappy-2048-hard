@@ -1,0 +1,18 @@
+.e  {
+  background-color: gray;
+  color: white;
+  font: 30px "Silkscreen", sans-serif;
+  border: 2px solid white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.f  {
+  background-color: black;
+  color: gray;
+  font: 30px "Silkscreen", sans-serif;
+  border: 2px solid black;
+  position: fixed;
+  top: 0px;
+  left: 30px;
+}
