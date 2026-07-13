@@ -282,13 +282,20 @@ var loadGameSound = function (n, chc) { // file name, channel count
   }
  }
  
- for (var i = 0; i<chc; i++) {
+  for (var i = 0; i<chc; i++) {
   var ao = document.createElement("audio");
   var sch = {};
   sch.sound = ao;
   sch.can_play = true;
   o.channels.push(sch);
   ao.src = n;
+  if (ao.src == './sam (1).wav') {
+    ao.volume = 0.4
+  }
+  if (ao.src == './yt1z.net - Mettaton explode sound effect (320 KBps) (1).mp3') {
+    ao.volume = 0.4
+    ao.currentTime = 1
+  }
   ao.type = "audio/wav";
   document.body.appendChild(ao);
  }
@@ -430,15 +437,15 @@ var ww = 768;
 var hh = 920;
 
 
-var flap = loadGameSound('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/jump2.wav?v=1716429667317', 3);
+var flap = loadGameSound('./jump.wav', 3);
 
-var coin = loadGameSound('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/double.wav?v=1716429826142', 1);
+var coin = loadGameSound('./double.wav', 1);
 
-var special = loadGameSound('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/doublespecial.wav?v=1716430293730', 1);
+var special = loadGameSound('./doublespecial.wav', 1);
 
-var punch = loadGameSound('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/explosion-42132.mp3?v=1733508361323', 5);
+var punch = loadGameSound('./yt1z.net - Mettaton explode sound effect (320 KBps) (1).mp3', 5);
 
-var hs = loadGameSound('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/sam%20(2).wav?v=1716431134886', 1);
+var hs = loadGameSound('./sam (1).wav', 1);
 /*
 game.canvas = document.createElement('canvas');
 game.canvas.width = ww;
@@ -465,7 +472,7 @@ var wing = {};
 wing.fr = 0;
 wing.vfr = 0;
 
-wing.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(19).png?v=1733379877306'); // 150 x 131
+wing.img = loadGameImage('./speed (6).png'); // 150 x 131
 wing.canvas = document.createElement('canvas');
 wing.canvas.width = 150;
 wing.canvas.height = 131;
@@ -478,7 +485,7 @@ wing.ctx2 = wing.canvas2.getContext('2d');
 
 var wingfill = {};
 
-wingfill.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(30).png?v=1733444353739'); // 150 x 131
+wingfill.img = loadGameImage('./speed (7).png'); // 150 x 131
 wingfill.canvas = document.createElement('canvas');
 wingfill.canvas.width = 150;
 wingfill.canvas.height = 131;
@@ -489,7 +496,7 @@ logo.a = -.2;
 logo.fr = 0;
 logo.showing = true;
 logo.hiding = false;
-logo.img = loadGameImage('https://cdn.glitch.global/ac1995fc-9a7c-48f0-a6b9-a82cc9fdf7d3/speed%20(35).png?v=1733928023966'); // 626 x 188
+logo.img = loadGameImage('./speed (8).png'); // 626 x 188
 logo.img.style.position = 'absolute';
 logo.img.style.opacity = 0;
 logo.img.style.zIndex = '42069';
@@ -501,7 +508,6 @@ logo.reposition = function () {
 var qre = undefined;
 
 
-
 var spd = {};
 spd.a = -.2;
 spd.fr = 0;
@@ -509,30 +515,9 @@ spd.showing = true;
 spd.hiding = false;
 
 if (document.qvar == 0.5) {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(1).png?v=1727586610796');
-} 
-if (document.qvar == 1) {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(2).png?v=1727586621769');
-} 
-if (document.qvar == 1.5) {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(3).png?v=1727586644599');
-} 
-if (document.qvar == 2) {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(4).png?v=1727586655881');
-} 
-if (document.qvar == 2.5) {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(5).png?v=1727586665025');
-} 
-if (document.qvar == 3) {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(6).png?v=1727586673009');
-} 
-if (document.qvar == 3.5) {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(7).png?v=1727586681992');
-} 
-if (document.qvar == 4) {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(8).png?v=1727586690052');
+  spd.img = loadGameImage('./speed (9).png');
 } else {
-  spd.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed.png?v=1727586602239');
+  spd.img = loadGameImage('./speed (9).png');
 };
 spd.img.style.position = 'absolute';
 spd.img.style.opacity = 0;
@@ -549,7 +534,7 @@ gameover.a = -.2;
 gameover.fr = 0;
 gameover.showing = false;
 gameover.hiding = true;
-gameover.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(23).png?v=1733426751006'); // 626 x 144
+gameover.img = loadGameImage('./speed (9).png'); // 626 x 144
 gameover.img.style.position = 'absolute';
 gameover.img.style.opacity = 0;
 gameover.img.style.zIndex = '42069';
@@ -571,7 +556,7 @@ playagain.a = -.2;
 playagain.fr = 0;
 playagain.showing = false;
 playagain.hiding = true;
-playagain.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(26).png?v=1733442580345');
+playagain.img = loadGameImage('./speed (10).png');
 playagain.img.style.border = '0px';
 playagain.img.style.cursor = 'pointer';
 playagain.img.border = 0;
@@ -596,7 +581,7 @@ var c2s = {};
 c2s.a = -1;
 c2s.showing = true;
 c2s.hiding = false;
-c2s.img = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(34).png?v=1733501584923'); // 337 x 75
+c2s.img = loadGameImage('./speed (15).png'); // 337 x 75
 c2s.img.style.position = 'absolute';
 c2s.img.style.opacity = 0;
 c2s.img.style.zIndex = '42070';
@@ -613,7 +598,7 @@ if (localStorage.sound === undefined) {
 }
 sndo.has_sound = localStorage.sound === 'true';
 sndo.div = document.createElement('div');
-sndo.div.style.backgroundImage = 'url("https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(31).png?v=1733500316746")';
+sndo.div.style.backgroundImage = 'url("./speed (13).png")';
 sndo.div.style.position = 'absolute';
 sndo.div.style.width = '64px';
 sndo.div.style.height = '64px';
@@ -625,27 +610,27 @@ sndo.reposition = function () {
 }
 var sndoOnClick = function () {
   if (sndo.has_sound) {
-    sndo.div.style.backgroundPosition = '-64px 0px';
+    sndo.div.style.backgroundPosition = '0px 0px';
     sndo.has_sound = false;
     localStorage.sound = 'false';
   } else {
-    sndo.div.style.backgroundPosition = '0px 0px';
+    sndo.div.style.backgroundPosition = '-64px 0px';
     sndo.has_sound = true;
     localStorage.sound = 'true';
   }
 }
 sndo.div.addEventListener('click', sndoOnClick);
 if (sndo.has_sound) {
-  sndo.div.style.backgroundPosition = '0px 0px';
-} else {
   sndo.div.style.backgroundPosition = '-64px 0px';
+} else {
+  sndo.div.style.backgroundPosition = '0px 0px';
 }
 sndo.div.addEventListener('touchstart', function () {
  if (sndo.has_sound) {
-  sndo.div.style.backgroundPosition = '-64px 0px';
+  sndo.div.style.backgroundPosition = '0px 0px';
   sndo.has_sound = false;
  } else {
-  sndo.div.style.backgroundPosition = '0px 0px';
+  sndo.div.style.backgroundPosition = '-64px 0px';
   sndo.has_sound = true;
  }
 });
@@ -736,9 +721,9 @@ dm.hiding = false;
 if (game.bg.style.background = '#000000') {
   dm.on = false;
 }
-dm.on = game.bg.style.background = '#303030';
+dm.on = game.bg.style.background = '#a0a0a0';
 dm.div = document.createElement('div');
-dm.div.style.backgroundImage = 'url("https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/speed%20(25).png?v=1733442356626")';
+dm.div.style.backgroundImage = 'url("./speed (12).png")';
 dm.div.style.position = 'absolute';
 dm.div.style.width = '64px';
 dm.div.style.height = '64px';
@@ -750,27 +735,27 @@ dm.reposition = function () {
 }
 var dmOnClick = function () {
   if (dm.on) {
-    dm.div.style.backgroundPosition = '-64px 0px';
+    dm.div.style.backgroundPosition = '0px 0px';
     dm.on = false;
     game.bg.style.background = '#000000';
   } else {
-    dm.div.style.backgroundPosition = '0px 0px';
+    dm.div.style.backgroundPosition = '-64px 0px';
     dm.on = true;
-    game.bg.style.background = '#303030';
+    game.bg.style.background = '#a0a0a0';
   }
 }
 dm.div.addEventListener('click', dmOnClick);
 if (dm.on) {
-  dm.div.style.backgroundPosition = '0px 0px';
-} else {
   dm.div.style.backgroundPosition = '-64px 0px';
+} else {
+  dm.div.style.backgroundPosition = '0px 0px';
 }
 dm.div.addEventListener('touchstart', function () {
  if (dm.on) {
-  dm.div.style.backgroundPosition = '-64px 0px';
+  dm.div.style.backgroundPosition = '0px 0px';
   dm.on = false;
  } else {
-  dm.div.style.backgroundPosition = '0px 0px';
+  dm.div.style.backgroundPosition = '-64px 0px';
   dm.on = true;
  }
 });
@@ -783,7 +768,7 @@ ground.canvas = document.createElement('canvas');
 ground.canvas.style.position = 'absolute';
 ground.canvas.style.zIndex = '31337';
 ground.ctx = ground.canvas.getContext('2d');
-ground.bit = loadGameImage('https://cdn.glitch.global/b871a81a-c654-41e2-b425-e45e45f3219f/1c81a4de-011a-4582-8052-3dd9851dfb78.image.png?v=1716383991552');
+ground.bit = loadGameImage('./download (1).png');
 
 
 
