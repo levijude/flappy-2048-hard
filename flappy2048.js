@@ -437,7 +437,7 @@ var ww = 768;
 var hh = 920;
 
 
-var flap = loadGameSound('./jump.wav', 3);
+var flap = loadGameSound('./jump2.wav', 3);
 
 var coin = loadGameSound('./double.wav', 1);
 
